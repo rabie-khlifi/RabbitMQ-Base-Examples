@@ -10,6 +10,32 @@ npm install
 
 Make sure you have RabbitMQ running on `localhost:5672`.
 
+## Run RabbitMQ with Docker Compose
+
+This project includes a `docker-compose.yml` to start RabbitMQ locally.
+
+```bash
+docker compose up -d
+```
+
+RabbitMQ will be available at:
+- AMQP: `localhost:5672`
+- Management UI: `http://localhost:15672`
+- Username: `guest`
+- Password: `guest`
+
+Stop and remove the containers:
+
+```bash
+docker compose down
+```
+
+To also remove RabbitMQ persisted data volume:
+
+```bash
+docker compose down -v
+```
+
 ## Running Examples
 
 Each example has both JavaScript and TypeScript versions. Use the npm scripts defined in `package.json`:
@@ -112,7 +138,7 @@ npm run rpc:client:ts
 
 - Node.js (v14 or higher)
 - npm
-- RabbitMQ server running and accessible on localhost:5672
+- RabbitMQ server running and accessible on localhost:5672 (or Docker + Docker Compose)
 
 ## TypeScript Support
 
